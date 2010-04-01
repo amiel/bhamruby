@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_filter :require_session
   before_filter :am_i_coordinator, :only => [:edit, :update, :destroy]
 
   # GET /events

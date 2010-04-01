@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_filter :require_session
   before_filter :am_i_maintainer, :only => [:edit, :update, :destroy]
 
   # GET /projects

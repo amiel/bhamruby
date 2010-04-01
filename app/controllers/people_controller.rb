@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  before_filter :require_session, :except => [:new, :create]
+  before_filter :require_no_session, :only => [:new, :create]
   before_filter :am_i_current_person, :only => [:edit, :update, :destroy]
   
   # GET /people

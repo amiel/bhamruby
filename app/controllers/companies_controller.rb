@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  before_filter :require_session
   before_filter :am_i_owner, :only => [:edit, :update, :destroy]
 
   # GET /companies
