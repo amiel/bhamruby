@@ -3,7 +3,6 @@ class EventsController < ApplicationController
   before_filter :am_i_coordinator, :only => [:edit, :update, :destroy]
 
   # GET /events
-  # GET /events.xml
   def index
     @events = Event.all
 
@@ -15,7 +14,6 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1
-  # GET /events/1.xml
   def show
     @event = Event.find(params[:id])
 
@@ -27,7 +25,6 @@ class EventsController < ApplicationController
   end
 
   # GET /events/new
-  # GET /events/new.xml
   def new
     @event = Event.new
 
@@ -43,7 +40,6 @@ class EventsController < ApplicationController
   end
 
   # POST /events
-  # POST /events.xml
   def create
     @event = Event.new(params[:event])
 
@@ -62,7 +58,6 @@ class EventsController < ApplicationController
   end
 
   # PUT /events/1
-  # PUT /events/1.xml
   def update
     respond_to do |format|
       if @event.update_attributes(params[:event])
@@ -79,7 +74,6 @@ class EventsController < ApplicationController
   end
 
   # DELETE /events/1
-  # DELETE /events/1.xml
   def destroy
     @event.destroy
 

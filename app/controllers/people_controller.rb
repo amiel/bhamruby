@@ -4,7 +4,6 @@ class PeopleController < ApplicationController
   before_filter :am_i_current_person, :only => [:edit, :update, :destroy]
   
   # GET /people
-  # GET /people.xml
   def index
     @people = Person.all
 
@@ -16,7 +15,6 @@ class PeopleController < ApplicationController
   end
 
   # GET /people/1
-  # GET /people/1.xml
   def show
     @person = Person.find(params[:id])
 
@@ -28,7 +26,6 @@ class PeopleController < ApplicationController
   end
 
   # GET /people/new
-  # GET /people/new.xml
   def new
     @person = Person.new
 
@@ -44,7 +41,6 @@ class PeopleController < ApplicationController
   end
 
   # POST /people
-  # POST /people.xml
   def create
     @person = Person.new(params[:person])
 
@@ -63,7 +59,6 @@ class PeopleController < ApplicationController
   end
 
   # PUT /people/1
-  # PUT /people/1.xml
   def update
     respond_to do |format|
       if @person.update_attributes(params[:person])
@@ -80,7 +75,6 @@ class PeopleController < ApplicationController
   end
 
   # DELETE /people/1
-  # DELETE /people/1.xml
   def destroy
     @person.destroy
 

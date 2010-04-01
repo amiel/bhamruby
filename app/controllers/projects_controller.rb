@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
   before_filter :am_i_maintainer, :only => [:edit, :update, :destroy]
 
   # GET /projects
-  # GET /projects.xml
   def index
     @projects = Project.all
 
@@ -15,7 +14,6 @@ class ProjectsController < ApplicationController
   end
 
   # GET /projects/1
-  # GET /projects/1.xml
   def show
     @project = Project.find(params[:id])
 
@@ -27,7 +25,6 @@ class ProjectsController < ApplicationController
   end
 
   # GET /projects/new
-  # GET /projects/new.xml
   def new
     @project = Project.new
 
@@ -43,7 +40,6 @@ class ProjectsController < ApplicationController
   end
 
   # POST /projects
-  # POST /projects.xml
   def create
     @project = Project.new(params[:project])
 
@@ -62,7 +58,6 @@ class ProjectsController < ApplicationController
   end
 
   # PUT /projects/1
-  # PUT /projects/1.xml
   def update
     respond_to do |format|
       if @project.update_attributes(params[:project])
@@ -79,7 +74,6 @@ class ProjectsController < ApplicationController
   end
 
   # DELETE /projects/1
-  # DELETE /projects/1.xml
   def destroy
     @project.destroy
 
