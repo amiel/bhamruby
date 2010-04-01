@@ -1,13 +1,1 @@
-<dl>
-  <dt>Name</dt><dd><%=h @person.name -%></dd>
-  <dt>Email</dt><dd><%=h @person.email -%></dd>
-  <dt>Phone</dt><dd><%=number_to_phone @person.phone -%></dd>
-<% if @person.company -%>
-  <dt>Company</dt><dd><%=h @person.company.name -%></dd>
-<% end -%>
-  <dt>Description</dt><dd><%=h @person.description -%></dd>
-  <dt>Links</dt><dd><%=h @person.links -%></dd>
-<% if @person == current_person -%>
-  <dt>&nbsp;</dt><dd><%=link_to 'Edit', [:edit, @person] -%></dd>
-<% end %>
-</dl>
+<%=render :partial => @person %>
