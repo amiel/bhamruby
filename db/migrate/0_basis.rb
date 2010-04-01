@@ -28,7 +28,7 @@ class Basis < ActiveRecord::Migration
     create_table :companies do |t|
       t.string :name
       t.string :url
-      t.string :address
+      t.text :address
       t.string :phone
       t.text :links
       t.belongs_to :owner
@@ -50,8 +50,9 @@ class Basis < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.datetime :at
-      t.string :location
+      t.text :location
       t.belongs_to :coordinator
+      t.text :links
 
       t.timestamps
     end

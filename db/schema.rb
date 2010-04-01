@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 0) do
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.string   "url"
-    t.string   "address"
+    t.text     "address"
     t.string   "phone"
     t.text     "links"
     t.integer  "owner_id"
@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "name"
     t.text     "description"
     t.datetime "at"
-    t.string   "location"
+    t.text     "location"
     t.integer  "coordinator_id"
+    t.text     "links"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
