@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(:version => 0) do
   create_table "events", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "at"
-    t.text     "location"
+    t.datetime "date_and_time"
+    t.string   "location_title"
+    t.text     "location_address"
     t.integer  "coordinator_id"
     t.text     "links"
     t.datetime "created_at"

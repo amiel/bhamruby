@@ -12,7 +12,8 @@
 </head> 
 <body> 
 	<div id="header">
-			<%= render :partial => '/sessions/info' %>
+		<%=render :partial => '/sessions/info' %>
+		<%=render :partial => '/sessions/links' if current_person %>	
 	</div>
 	<div id="content"> 
 	<% flash.each {|n,m| %>

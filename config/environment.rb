@@ -41,4 +41,4 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-DATETIME_FORMAT = "%A, %B %d, %Y at %I:%M %p"
+DATETIME_FORMAT = "%I:%M %p, %A, %B %d, %Y"

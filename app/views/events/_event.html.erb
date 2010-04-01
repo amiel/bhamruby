@@ -1,8 +1,9 @@
 <dl id="event_<%=event.id -%>" class="event">
   <dt>Name</dt><dd><%=h event.name -%></dd>
   <dt>Description</dt><dd><%=h(event.description).gsub("\n",'<br>') -%></dd>
-  <dt>Location</dt><dd><%=h event.location -%></dd>
-  <dt>Date and Time</dt><dd><%=event.at.strftime(DATETIME_FORMAT) -%></dd>
+  <dt>Location Title</dt><dd><%=h event.location_title -%></dd>
+  <dt>Location Address</dt><dd><%=h(event.location_address).gsub("\n",'<br>') -%></dd>
+  <dt>Date and Time</dt><dd><%=event.date_and_time.strftime(DATETIME_FORMAT) -%></dd>
 <% if event.coordinator -%>
   <dt>Coordinator</dt><dd><%=h event.coordinator.name -%></dd>
 <% end -%>

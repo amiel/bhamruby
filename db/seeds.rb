@@ -5,3 +5,6 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+Person.create(:name=>'James Mason', :email=>'james@bear454.com', :password=>'working', :password_confirmation=>'working')
+Event.create(:name=>'#bhamruby Meetup', :date_and_time=>'2010-04-01 17:30 PDT', :location_title=>'Carnes Media', :location_address=>"1031 N State St.\nBellingham, WA 98225")

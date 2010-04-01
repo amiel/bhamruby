@@ -49,8 +49,9 @@ class Basis < ActiveRecord::Migration
     create_table :events do |t|
       t.string :name
       t.text :description
-      t.datetime :at
-      t.text :location
+      t.datetime :date_and_time
+      t.string :location_title
+      t.text :location_address
       t.belongs_to :coordinator
       t.text :links
 
