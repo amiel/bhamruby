@@ -3,3 +3,6 @@ body{ background-color: #fff; color: #223; font-family: "Trebuchet MS", Tahoma, 
 h1 { font-size:3em; margin:1em; }
 #irc{ width: 800px; margin: 3em auto; font-size: 2em; }
 #next_event{ width: 800px; margin: 3em auto; font-size: 2em; }
+
+dt {font-weight: bold; padding: 6px; }
+dd {margin-left: 2em; }

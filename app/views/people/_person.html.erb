@@ -5,8 +5,8 @@
 <% if person.company -%>
   <dt>Company</dt><dd><%=h person.company.name -%></dd>
 <% end -%>
-  <dt>Description</dt><dd><%=h(person.description).gsub("\n",'<br>') -%></dd>
-  <dt>Links</dt><dd><%=h person.links -%></dd>
+  <dt>Description</dt><dd><%=h(person.description).gsub("\n",'<br>') -%>&nbsp;</dd>
+  <dt>Links</dt><dd><%=h person.links -%>&nbsp;</dd>
 <% if person == current_person -%>
   <dt>&nbsp;</dt><dd><%=link_to 'Edit', [:edit, person] -%> | <%=link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete -%></dd>
 <% end %>
