@@ -1,0 +1,13 @@
+.DS_Store
+.hg
+*.orig
+*~
+log/*.log
+tmp
+public/photos
+public/system
+nbproject
+sqldump
+db/*.sqlite3
+capybara-*.html
+coverage

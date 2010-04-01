@@ -1,0 +1,61 @@
+
+#bhamruby for bhamruby.org, The Bellingham Ruby Users Group
+
+Copyright (c) 2010 James Mason <james@bear454.com> & #bhamruby (Bellingham Ruby Users Group)
+
+---------------------------------------------------------------------------
+LICENSE
+ 
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+ 
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+----------------------------------------------------------------------------
+FEATURES:
+Promote Ruby/Rails
+Showcase projects
+User links to fb/twitter/etc.
+When/where is the meetup?
+IRC pimping
+Local companies using Rails
+
+----------------------------------------------------------------------------
+TODO: 
+everything!
+
+build relationships
+  people have and belong to many events through attendance
+  a person belongs to a company
+  a person has many projects
+  a company has many people
+  a company has one owner (person)
+  a company has many projects
+  a project has and belongs to many people and companies
+  a project belongs to a maintainer
+  an event has and belongs to many people through attenance
+
+* Change site_name and slogan in config/locales/en.yml
+* check your default_locale and time_zone
+* setup spreadhead filter at config/initializers/spreadhead.rb
+* use this for has_attached_file options:
+    :storage => :s3,
+    :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :path => ":attachment/:id/:style.:extension",
+    :bucket => "projectname#{Rails.env}"
+----------------------------------------------------------------------------
+
