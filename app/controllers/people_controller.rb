@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  before_filter :am_i_current_person, :only => [:edit, :update, :destroy]
+  
   # GET /people
   # GET /people.xml
   def index
@@ -88,6 +90,15 @@ class PeopleController < ApplicationController
       format.html { redirect_to(people_url) }
       format.xml  { head :ok }
       format.json { head :ok }
+    end
+  end
+  
+  protected
+  
+  def am_i_current_person
+    unless current_person.id == params[:id].to_i
+      flash[:error] = "You can only do that to your own data."
+      redirect_to :back 
     end
   end
 end

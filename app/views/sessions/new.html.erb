@@ -1,0 +1,11 @@
+<h1>Login</h1>
+ 
+<% form_for @session, :url => session_path do |f| %>
+	<%=f.error_messages %>
+  <%=f.label :email %>
+  <%=f.text_field :email %>
+  <%=f.label :password %>
+  <%=f.password_field :password %>
+  <%=f.label :remember_me, (f.check_box(:remember_me)+'Remember Me') %>
+  <%=f.submit 'Login' %>
+<% end %>

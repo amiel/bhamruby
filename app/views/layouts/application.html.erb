@@ -4,11 +4,23 @@
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>  
 	<title>#bhamruby</title> 
-	<link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />  
+	<link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" /> 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/javascripts/application.js"></script>
+	<%= yield :head %>
 </head> 
 <body> 
+	<div id="header">
+			<%= render :partial => '/sessions/info' %>
+	</div>
 	<div id="content"> 
-		<%=yield %>
+	<% flash.each {|n,m| %>
+	  <div class="flash <%=n%>">
+		  <%=h m -%>
+	  </div>
+	<% } %>
+	  <%=yield %> 
 	</div> 
 <script type="text/javascript"> 
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

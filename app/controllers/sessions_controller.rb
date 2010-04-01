@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-	 before_filter :require_no_person, :only => [:new, :create]
-	 before_filter :require_person, :only => :destroy
+	 before_filter :require_no_session, :only => [:new, :create]
+	 before_filter :require_session, :only => :destroy
 
 	 def new
 	   @session = PersonSession.new

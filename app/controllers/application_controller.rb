@@ -25,16 +25,16 @@ class ApplicationController < ActionController::Base
     def require_session
       unless current_session
         store_location
-        flash[:notice] = "You must be logged in to access that page."
+        flash[:error] = "You must be logged in to access that page."
         redirect_to new_session_path
         return false
       end
     end
  
     def require_no_session
-      if current_sesson
+      if current_session
         store_location
-        flash[:notice] = "You must be logged out to access that page"
+        flash[:error] = "You must be logged out to access that page."
         redirect_to current_person
         return false
       end
