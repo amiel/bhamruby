@@ -1,0 +1,12 @@
+<dl id="project_<%=project.id -%>" class="project">
+  <dt>Name</dt><dd><%=h project.name -%></dd>
+  <dt>Description</dt><dd><%=h(project.description).gsub("\n",'<br>') -%></dd>
+  <dt>Url</dt><dd><%=h project.url -%></dd>
+<% if project.maintainer -%>
+  <dt>Maintainer</dt><dd><%=h project.maintainer.name -%></dd>
+<% end -%>
+  <dt>Links</dt><dd><%=h project.links -%></dd>
+<% if current_person && (current_person == project.maintainer || !project.maintainer) -%>
+  <dt>&nbsp;</dt><dd><%=link_to 'Edit', [:edit, project] -%> | <%=link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete -%></dd>
+<% end %>
+</dl>

@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_filter :am_i_maintainer, :only => [:edit, :update, :destroy]
+
   # GET /projects
   # GET /projects.xml
   def index
@@ -37,7 +39,6 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
   end
 
   # POST /projects
@@ -62,8 +63,6 @@ class ProjectsController < ApplicationController
   # PUT /projects/1
   # PUT /projects/1.xml
   def update
-    @project = Project.find(params[:id])
-
     respond_to do |format|
       if @project.update_attributes(params[:project])
         flash[:notice] = 'Project was successfully updated.'
@@ -81,7 +80,6 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.xml
   def destroy
-    @project = Project.find(params[:id])
     @project.destroy
 
     respond_to do |format|
@@ -90,4 +88,15 @@ class ProjectsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  protected
+  
+  def am_i_maintainer
+    @project = Project.find(params[:id])
+    unless !@project.maintainer || current_person == @project.maintainer
+      flash[:error] = "You can only do that to your own data."
+      redirect_to :back 
+    end
+  end
+
 end

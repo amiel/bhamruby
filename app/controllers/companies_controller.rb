@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  before_filter :am_i_owner, :only => [:edit, :update, :destroy]
+
   # GET /companies
   # GET /companies.xml
   def index
@@ -37,7 +39,6 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
-    @company = Company.find(params[:id])
   end
 
   # POST /companies
@@ -62,8 +63,6 @@ class CompaniesController < ApplicationController
   # PUT /companies/1
   # PUT /companies/1.xml
   def update
-    @company = Company.find(params[:id])
-
     respond_to do |format|
       if @company.update_attributes(params[:company])
         flash[:notice] = 'Company was successfully updated.'
@@ -81,7 +80,6 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1
   # DELETE /companies/1.xml
   def destroy
-    @company = Company.find(params[:id])
     @company.destroy
 
     respond_to do |format|
@@ -90,4 +88,15 @@ class CompaniesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  protected
+  
+  def am_i_owner
+    @company = Company.find(params[:id])
+    unless !@company.owner || current_person == @company.owner
+      flash[:error] = "You can only do that to your own data."
+      redirect_to :back 
+    end
+  end
+
 end
