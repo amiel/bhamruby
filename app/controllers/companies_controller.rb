@@ -7,6 +7,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @companies }
+      format.json { render :json => @companies }
     end
   end
 
@@ -18,6 +19,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @company }
+      format.json { render :json => @company }
     end
   end
 
@@ -29,6 +31,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @company }
+      format.json { render :json => @company }
     end
   end
 
@@ -47,9 +50,11 @@ class CompaniesController < ApplicationController
         flash[:notice] = 'Company was successfully created.'
         format.html { redirect_to(@company) }
         format.xml  { render :xml => @company, :status => :created, :location => @company }
+        format.json { render :json => @company, :status => :created, :location => @company }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @company.errors, :status => :unprocessable_entity }
+        format.json { render :json => @company.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -64,9 +69,11 @@ class CompaniesController < ApplicationController
         flash[:notice] = 'Company was successfully updated.'
         format.html { redirect_to(@company) }
         format.xml  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @company.errors, :status => :unprocessable_entity }
+        format.json { render :json => @company.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -80,6 +87,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(companies_url) }
       format.xml  { head :ok }
+      format.json { head :ok }
     end
   end
 end
