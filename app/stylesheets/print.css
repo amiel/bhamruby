@@ -1,0 +1,175 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+  line-height: 1em;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 1.75em;
+  margin-bottom: 0.5142em;
+  padding-top: 0.2em;
+}
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.7em;
+  padding-top: 0.3em;
+}
+h4 {
+  font-size: 1.25em;
+  margin-bottom: 0.6em;
+}
+h5, h6 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+p, blockquote, ul, ol, dl, form, table {
+  line-height: inherit;
+  margin: 0 0 1.5em 0;
+}
+ul, ol, dl { padding: 0; }
+ul ul { margin: 0; }
+ul ol { margin: 0; }
+ol ol { margin: 0; }
+ol ul { margin: 0; }
+dd { margin: 0; }
+li {
+  margin: 0;
+  display: list-item;
+  list-style-position: inside;
+}
+blockquote, dd, li { padding: 0 0 0 2em; }
+pre, code, samp, kbd, var { font: 100% mono-space, monospace; }
+pre { overflow: auto; }
+abbr, acronym {
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 1px;
+}
+small { font-size: 90%; }
+sup, sub { font-size: 85%; }
+em, cite, q { font-style: italic; }
+img { border: none; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, caption { text-align: left; }
+form { display: none; }
+.left {
+  float: left;
+  margin-right: 1em;
+}
+.right {
+  float: right;
+  margin-left: 1em;
+}
+.center { text-align: center; }
+.clear { clear: both; }
+.first { margin-left: 0 !important; }
+.last { margin-right: 0 !important; }
+.top { margin-top: 0 !important; }
+.bottom { margin-bottom: 0 !important; }
+.hidden, .graphic { display: none; }
+body, table, input, textarea, select, li, button {
+  font: 100% Helvetica, Arial, Sans-Serif;
+  line-height: 180%;
+  color: #000000;
+}
+body {
+  font-size: 13px;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #555555;
+}
+ins {
+  text-decoration: none;
+  color: #990000;
+  font-style: italic;
+}
+code { color: #555555; }
+pre {
+  margin-left: 2em;
+  padding-left: 2em;
+  border-left: 1px solid #cccccc;
+}
+blockquote {
+  margin-left: 2em;
+  border-left: 1px solid #cccccc;
+  font-style: italic;
+}
+dt { font-weight: bold; }
+th, td { padding: 8px; }
+th { background: #eeeeee; }
+td { border-bottom: 1px solid #eeeeee; }
+caption {
+  font-style: italic;
+  color: #777777;
+  margin: 0.5em 0;
+}
+.excerpt {
+  font-size: 120%;
+  font-style: italic;
+}
+.note { font-weight: bold; }
+#header {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 1em;
+}
+#footer {
+  margin-top: 1em;
+  border-top: 1px solid #cccccc;
+  padding-top: 1em;
+  position: relative;
+  clear: both;
+}
+#nav, .nav { display: none; }
+#header h1 {
+  line-height: 50px;
+  height: 50px;
+  margin: 0;
+}
+.inner:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.content:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.cols:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.fixed:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.inner, .content, .cols, .fixed {
+  display: block;
+  min-height: 1%;
+}
+* html .inner { height: 1%; }
+* html .content { height: 1%; }
+* html .cols { height: 1%; }
+* html .fixed { height: 1%; }

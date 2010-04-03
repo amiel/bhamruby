@@ -349,24 +349,3 @@ button {
 * html .content { height: 1%; }
 * html .cols { height: 1%; }
 * html .fixed { height: 1%; }
-html { background: center center fixed url(/images/background.jpg); }
-body {
-  background: none;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
-}
-a { color: #993333; }
-a:visited { color: #993333; }
-a:hover { color: #bb3333; }
-#container {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  -moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
-  -moz-border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-}
-#user-info {
-  float: right;
-  font-size: 0.9em;
-}
