@@ -1,11 +1,35 @@
 @import "easy";   
 
-html{ background: center center fixed url(/images/background.jpg); }
-body{ background: none; text-shadow: 0 1px 0 rgba(255,2555,255,.6); }
+html{ background: center center fixed; background: #2C3230; }
+body{ background: none; }
 
-a, a:visited{ color: #933; }
-	a:hover{ color: #b33; }
+a, a:visited{ color: #95040B; }
+	a:hover{ color: #BC0100; }
+	
+.container{ margin: 0 auto; width: 960px; text-align: left; }
 
-#container{ margin-top: 60px; margin-bottom: 60px; background: rgba(255,255,255,.9); padding: 20px; -moz-box-shadow: 0 0 50px rgba(0,0,0,.6); -moz-border-radius: 10px; border: 1px solid rgba(0,0,0,.5); }
+#main{
+	background: #fff; color: #0C0304; padding: 100px 0 40px; min-height: 300px; 
+}
 
-#user-info{ float: right; font-size: .9em; }
+
+#nav{
+	overflow: hidden; background: #0C0304;
+	li{
+		float: right; margin-right: 0; margin-left: 2em;
+		a{ color: #fff; font-size: 1.6em; text-transform: uppercase; 
+			:hover{ color: #BC0100; }
+		}
+	}
+}
+
+#header{
+	h1{ height: 2.5em; line-height: 2.5em; background: #BC0100; color: #fff; position: absolute; top: 0; padding: 10px; border-top: 10px solid #95040B; -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		a{ color: #fff; font-size: 2.2em; text-transform: uppercase; text-shadow: 0 -2px 0 #95040B; }
+	}
+	#user-info{ float: right; font-size: .9em; }
+}
+
+#footer{
+	color: #fff; padding: 20px 0; font-size: .9em; 
+} 

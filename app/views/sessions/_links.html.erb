@@ -1,9 +1,13 @@
-<ul id="nav">
-  <li><%=link_to 'Home', '/' -%></li>
-<% if current_person %>
-  <li><%=link_to 'People', people_path -%></li>
-  <li><%=link_to 'Companies', companies_path -%></li>
-  <li><%=link_to 'Projects', projects_path -%></li>
-  <li><%=link_to 'Events', events_path -%></li>
-<% end %>
-</ul>
+<div id="nav">
+  <div class="container">
+  <ul>
+    <li><%=link_to 'Home', '/' -%></li>
+  <% if current_person %>
+    <li><%=link_to 'People', people_path -%></li>
+    <li><%=link_to 'Companies', companies_path -%></li>
+    <li><%=link_to 'Projects', projects_path -%></li>
+    <li><%=link_to 'Events', events_path -%></li>
+  <% end %>
+  </ul>
+  </div>
+</div>

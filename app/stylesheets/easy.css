@@ -136,8 +136,8 @@ th, td {
   padding: 0.5em 1em;
   line-height: 1.5em;
 }
-th { background: #eeeeee; }
-td { border-bottom: 1px solid #eeeeee; }
+th { background: #d9dade; }
+td { border-bottom: 1px solid #d9dade; }
 caption {
   font-style: italic;
   color: #777777;
@@ -231,7 +231,7 @@ button {
   text-align: left;
   position: relative;
 }
-.inner, #header { position: relative; }
+.inner { position: relative; }
 #footer {
   position: relative;
   clear: both;
@@ -267,11 +267,7 @@ button {
   float: left;
   display: inline;
 }
-#nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+#nav { position: relative; }
 #nav ul {
   margin: 0;
   padding: 0;
@@ -290,7 +286,7 @@ button {
   height: 32px;
   margin-right: 2em;
 }
-#nav ul {
+#nav ul ul {
   position: absolute;
   left: 0;
   top: 32px;
@@ -300,7 +296,7 @@ button {
   display: none;
   z-index: 1000;
 }
-#nav ul li {
+#nav ul ul li {
   float: none;
   display: block;
 }

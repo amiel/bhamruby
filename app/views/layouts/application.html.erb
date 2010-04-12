@@ -12,32 +12,40 @@
 	<%= yield :head %>
 </head> 
 <body> 
-<div id="container">
-	<div id="header">
-		<%=render :partial => '/sessions/info' %>	  
-	  <h1><a href="/">bhamruby</a></h1>
-		<%=render :partial => '/sessions/links' %>	
-	</div>
-	<div class="content"> 
-	<% flash.each {|n,m| %>
-	  <div class="flash <%=n%>">
-		  <%=h m -%>
-	  </div>
-	<% } %>
-	  <%=yield %> 
-	</div> 
-<script type="text/javascript" src="http://use.typekit.com/wej6nps.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<script type="text/javascript"> 
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script> 
-<script type="text/javascript"> 
-try {
-var pageTracker = _gat._getTracker("UA-15566016-1");
-pageTracker._setDomainName(".bhamruby.org");
-pageTracker._trackPageview();
-} catch(err) {}</script> 
+<%=render :partial => '/sessions/links' %>	
+<div id="header">
+  <div class="container">
+    <%=render :partial => '/sessions/info' %>	      
+    <h1><a href="/">bhamruby</a></h1>
+  </div>
+</div>
+<div id="main">
+  <div class="container"> 
+  <% flash.each {|n,m| %>
+    <div class="flash <%=n%>">
+  	  <%=h m -%>
+    </div>
+  <% } %>
+    <%=yield %> 
+  </div> 
+</div>
+<div id="footer">
+  <div class="container">
+    The footer!
+
+    <script type="text/javascript" src="http://use.typekit.com/wej6nps.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript"> 
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script> 
+    <script type="text/javascript"> 
+    try {
+    var pageTracker = _gat._getTracker("UA-15566016-1");
+    pageTracker._setDomainName(".bhamruby.org");
+    pageTracker._trackPageview();
+    } catch(err) {}</script> 
+  </div>
 </div>
 </body> 
 </html> 
