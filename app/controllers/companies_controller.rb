@@ -45,7 +45,7 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
-        flash[:notice] = 'Company was successfully created.'
+        flash[:notice] = I18n.t(:'companies.created')
         format.html { redirect_to(@company) }
         format.xml  { render :xml => @company, :status => :created, :location => @company }
         format.json { render :json => @company, :status => :created, :location => @company }
@@ -61,7 +61,7 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update_attributes(params[:company])
-        flash[:notice] = 'Company was successfully updated.'
+        flash[:notice] = I18n.t(:'companies.updated')
         format.html { redirect_to(@company) }
         format.xml  { head :ok }
         format.json { head :ok }

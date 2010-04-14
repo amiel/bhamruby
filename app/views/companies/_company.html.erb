@@ -1,5 +1,5 @@
-<% content_tag_for :li, company do %>
+<% content_tag_for :li, company, :class => cycle('odd', 'even') do %>
   <%= image_tag company.logo.url %>
-  <%=h company.name %>
-  <%= link_to h(company.url), h(company.url) %>
+  <h3><%= link_to h(company.name), company_path(company) %></h3>
+  <%= link_to h(company.url), h(company.url), :class => 'website' %>
 <% end %>
