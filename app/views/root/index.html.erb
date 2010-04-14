@@ -3,9 +3,8 @@
 <% if @next_event %>		
   <div id="next_event">
     The next event will be
-    <strong><%=@next_event.date_and_time.strftime("%I:%M %p") -%></strong>
-    <%=@next_event.date_and_time.strftime("%A") -%>, <strong><%=@next_event.date_and_time.strftime("%B %d") -%></strong>
-    at <a href="http://maps.google.com/maps?q=<%=url_encode @next_event.location_address.gsub(/\s/,' ') -%>"><%=h @next_event.location_title -%></a>.
+    <%=l @next_event.date_and_time, :format => :long_highlighted %>
+    at <%= link_to_map @next_event.location_title, @next_event.location_address %>.
     Bring beer, snacks, or code to share.
   </div>
 <% end %>

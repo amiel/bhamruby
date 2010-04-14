@@ -3,3 +3,12 @@
 
 en:
   hello: "Hello world"
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      long: "%B %e, %Y"
+  time:
+    formats:
+      default: "%m/%d/%Y %I:%M%p"
+      long: "%B %e, %Y %I:%M%p"
+      long_highlighted: "<strong>%I:%M %p</strong> %A, <strong>%B %d</strong>"
