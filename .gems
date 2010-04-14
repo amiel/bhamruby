@@ -1,0 +1,7 @@
+will_paginate
+less
+paperclip
+authlogic
+formtastic
+sprockets
+gravtastic --version='>= 2.1.0'

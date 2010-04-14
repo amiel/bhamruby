@@ -1,14 +1,17 @@
 <% submit ||= 'Save' -%>
-<% form_for(@company) do |f| %>
-  <%= f.error_messages %>
-  <dl id="company_<%=@company.id -%>" class="edit company">
-    <dt><%=f.label :name -%></dt><dd><%=f.text_field :name -%></dd>
-    <dt><%=f.label :url -%></dt><dd><%=f.text_field :url -%></dd>
-    <dt><%=f.label :address -%></dt><dd><%=f.text_area :address -%></dd>
-    <dt><%=f.label :phone -%></dt><dd><%=f.text_field :phone -%></dd>
-    <dt><%=f.label :owner -%></dt><dd><%=f.collection_select :owner_id, Person.all, :id, :name, {:prompt=>true} -%></dd>
-    <dt><%=f.label :links -%></dt><dd><%=f.text_area :links -%></dd>
-    <dt>&nbsp;</dt><dd><%=f.submit submit -%></dd>
-  </dl>
+<% semantic_form_for(@company, :html => { :multipart => true }) do |f| %>
+  
+  <% f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :url %>
+    <%= f.input :address %>
+    <%= f.input :phone %>
+    <%= f.input :owner %>
+    <%= f.input :links %>
+    <%= f.input :logo %>
+  <% end %>
+  
+  
+  <%= f.buttons :commit %>
 <% end %>
 

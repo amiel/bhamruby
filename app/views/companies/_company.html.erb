@@ -1,13 +1,5 @@
-<dl id="company_<%=company.id -%>" class="company">
-  <dt>Name</dt><dd><%=h company.name -%></dd>
-  <dt>Url</dt><dd><%=h company.url -%></dd>
-  <dt>Address</dt><dd><%=h(company.address).gsub("\n",'<br>') -%></dd>
-  <dt>Phone</dt><dd><%=number_to_phone company.phone -%></dd>
-<% if company.owner -%>
-  <dt>Owner</dt><dd><%=h company.owner.name -%></dd>
-<% end -%>
-  <dt>Links</dt><dd><%=h company.links -%></dd>
-<% if current_person && (current_person == company.owner || !company.owner) -%>
-  <dt>&nbsp;</dt><dd><%=link_to 'Edit', [:edit, company] -%> | <%=link_to 'Destroy', company, :confirm => 'Are you sure?', :method => :delete -%></dd>
+<% content_tag_for :li, company do %>
+  <%= image_tag company.logo.url %>
+  <%=h company.name %>
+  <%= link_to h(company.url), h(company.url) %>
 <% end %>
-</dl>
