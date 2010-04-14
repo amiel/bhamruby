@@ -361,7 +361,7 @@ a:hover { color: #bc0100; }
 #main {
   background: #ffffff;
   color: #0c0304;
-  padding: 100px 0 40px;
+  padding: 120px 0 40px;
   min-height: 300px;
 }
 #nav {
@@ -380,21 +380,15 @@ a:hover { color: #bc0100; }
 }
 #nav li a:hover { color: #bc0100; }
 #header h1 {
-  height: 2.5em;
-  line-height: 2.5em;
-  background: #bc0100;
-  color: #ffffff;
   position: absolute;
   top: 0;
-  padding: 10px;
-  border-top: 10px solid #95040b;
-  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 #header h1 a {
-  color: #ffffff;
-  font-size: 2.2em;
-  text-transform: uppercase;
-  text-shadow: 0 -2px 0 #95040b;
+  background: url('/images/logo.png');
+  text-indent: -999em;
+  width: 220px;
+  height: 150px;
+  display: block;
 }
 #header #user-info {
   float: right;
