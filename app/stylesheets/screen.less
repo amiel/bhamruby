@@ -12,7 +12,6 @@ a, a:visited{ color: #95040B; }
 	background: #fff; color: #0C0304; padding: 120px 0 40px; min-height: 300px; 
 }
 
-
 #nav{
 	overflow: hidden; background: #0C0304;
 	li{
@@ -28,6 +27,18 @@ a, a:visited{ color: #95040B; }
 		a{ background: url('/images/logo.png'); text-indent: -999em; width: 220px; height: 150px; display: block; }
 	}
 	#user-info{ float: right; font-size: .9em; }
+}
+
+
+ul#companies{ list-style-type: none; padding: 0; margin: 0;
+	li.company{ padding: 10px; margin: 0; border-top: 1px dotted #aaa; height: 52px; width: 50%;
+		:hover{ background-color: #fefeee; }
+		img{ float: left; display: block; }
+		h3{ margin: 0 52px; padding: 0; }
+		a.website{ margin: 3px 52px; display: block; color: #999; }
+		a.website:hover{ color: #BC0100; }
+	}
+	li.company:first-child{ border: none; }
 }
 
 #footer{

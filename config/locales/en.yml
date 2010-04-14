@@ -3,6 +3,15 @@
 
 en:
   hello: "Hello world"
+  companies:
+    created: 'You control the spice, you control the universe, with your brand new company.'
+    updated: 'The Force is with you.'
+    index:
+      title: 'THE Companies'
+  events:
+    index:
+      title: 'THE Events'
+      subtitle: 'Stuff to do if you are a nerd!'
   date:
     formats:
       default: "%m/%d/%Y"
