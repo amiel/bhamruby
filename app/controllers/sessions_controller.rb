@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
       
 	 def destroy
 	   current_session.destroy if current_session
-	   flash[:notice] = "Logout successful!"
+	   flash[:success] = "Logout successful!"
 	   redirect_back_or_default new_session_path
 	 end
 end

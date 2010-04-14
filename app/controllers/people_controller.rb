@@ -46,7 +46,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
-        flash[:notice] = 'Person was successfully created.'
+        flash[:success] = 'Person was successfully created.'
         format.html { redirect_to(@person) }
         format.xml  { render :xml => @person, :status => :created, :location => @person }
         format.json { render :json => @person, :status => :created, :location => @person }
@@ -62,7 +62,7 @@ class PeopleController < ApplicationController
   def update
     respond_to do |format|
       if @person.update_attributes(params[:person])
-        flash[:notice] = 'Person was successfully updated.'
+        flash[:success] = 'Person was successfully updated.'
         format.html { redirect_to(@person) }
         format.xml  { head :ok }
         format.json { head :ok }

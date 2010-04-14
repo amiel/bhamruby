@@ -45,7 +45,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        flash[:notice] = 'Project was successfully created.'
+        flash[:success] = 'Project was successfully created.'
         format.html { redirect_to(@project) }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
         format.json { render :json => @project, :status => :created, :location => @project }
@@ -61,7 +61,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        flash[:notice] = 'Project was successfully updated.'
+        flash[:success] = 'Project was successfully updated.'
         format.html { redirect_to(@project) }
         format.xml  { head :ok }
         format.json { head :ok }
