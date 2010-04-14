@@ -1,6 +1,8 @@
 <h1>Bellingham Rubyists <em>(aka #bhamruby)</em></h1> 
+
 <div id="irc">You can find us at #bhamruby on irc.oftc.net.</div> 
-<% if @next_event %>		
+
+<% if @next_event then %>
   <div id="next_event">
     The next event will be
     <%=l @next_event.date_and_time, :format => :long_highlighted %>
