@@ -6,4 +6,6 @@ class Event < ActiveRecord::Base
   named_scope :attending, :conditions => {:attending=>'yes'}
   named_scope :declining, :conditions => {:attending=>'no'}
   named_scope :uncommitted, :conditions => 'attending NOT IN (\'yes\',\'no\')'
+  
+  named_scope :future, lambda { { :conditions => ['date_and_time > ?', Time.current] } }
 end
