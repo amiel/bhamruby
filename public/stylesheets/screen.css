@@ -423,6 +423,20 @@ ul#companies li.company a.website {
   color: #999999;
 }
 ul#companies li.company a.website:hover { color: #bc0100; }
+ul#people li.person img {
+  float: left;
+  display: block;
+}
+ul#people li.person h3 {
+  margin: 0 52px;
+  padding: 0;
+}
+ul#people li.person a.company {
+  margin: 3px 52px;
+  display: block;
+  color: #999999;
+}
+ul#people li.person a.company:hover { color: #bc0100; }
 #footer {
   color: #ffffff;
   padding: 20px 0;

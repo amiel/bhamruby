@@ -1,5 +1,5 @@
 <% content_tag_for :li, person, :class => cycle('odd', 'even') do %>
-  <%# = image_tag :gravatar!!!! %>
+  <%= image_tag person.gravatar_url(:size => 42) %>
   <h3><%= link_to h(person.name), person %></h3>
-  <%= link_to person.company.name, person.company if person.company %>
+  <%= link_to person.company.name, person.company, :class => 'company' if person.company %>
 <% end %>

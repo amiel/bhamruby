@@ -5,5 +5,5 @@ class Person < ActiveRecord::Base
   has_many :events, :through => :attendances
   acts_as_authentic
   serialize :links
-  
+  is_gravtastic!
 end
