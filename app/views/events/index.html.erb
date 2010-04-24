@@ -1,3 +1,5 @@
 <h1><%=t :'.title' %></h1>
 <p><%=t :'.subtitle' %></p>
-<%=render :partial => @events %>
+<ul id="events" class="object-list">
+  <%= render @events %>
+</ul>

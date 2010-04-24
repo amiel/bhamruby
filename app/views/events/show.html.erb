@@ -1,1 +1,14 @@
-<%=render :partial => @event %>
+<dl id="event_<%= @event.id -%>" class="event">
+  <dt>Name</dt><dd><%=h @event.name -%></dd>
+  <dt>Description</dt><dd><%=h(@event.description).gsub("\n",'<br>') -%></dd>
+  <dt>Location Title</dt><dd><%=h @event.location_title -%></dd>
+  <dt>Location Address</dt><dd><%=h(@event.location_address).gsub("\n",'<br>') -%></dd>
+  <dt>Date and Time</dt><dd><%=@event.date_and_time.strftime(DATETIME_FORMAT) -%></dd>
+<% if @event.coordinator -%>
+  <dt>Coordinator</dt><dd><%=h @event.coordinator.name -%></dd>
+<% end -%>
+  <dt>Links</dt><dd><%=h @event.links -%></dd>
+<% if current_person && (current_person == @event.coordinator || !@event.coordinator) -%>
+  <dt>&nbsp;</dt><dd><%=link_to 'Edit', [:edit, @event] -%> | <%=link_to 'Destroy', @event, :confirm => 'Are you sure?', :method => :delete -%></dd>
+<% end %>
+</dl>
