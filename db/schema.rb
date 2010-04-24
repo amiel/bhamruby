@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100414180700) do
+ActiveRecord::Schema.define(:version => 20100424214056) do
 
   create_table "attendances", :force => true do |t|
     t.integer "person_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20100414180700) do
     t.text     "links"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "byob"
   end
 
   create_table "people", :force => true do |t|

@@ -7,10 +7,11 @@ en:
     created: 'You control the spice, you control the universe, with your brand new company.'
     updated: 'The Force is with you.'
     index:
-      title: 'THE Companies'
+      title: 'Companies'
   events:
+    byob: "Bring beer, snacks, or code to share."
     index:
-      title: 'THE Events'
+      title: 'Events'
       subtitle: 'Stuff to do if you are a nerd!'
   date:
     formats:

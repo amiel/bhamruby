@@ -1,14 +1,4 @@
-<% submit ||= 'Save' -%>
-<% form_for(@event) do |f| %>
-  <%= f.error_messages %>
-  <dl id="event_<%=@event.id -%>" class="edit event">
-    <dt><%=f.label :name -%></dt><dd><%=f.text_field :name -%></dd>
-    <dt><%=f.label :description -%></dt><dd><%=f.text_area :description -%></dd>
-    <dt><%=f.label :location_title -%></dt><dd><%=f.text_field :location_title -%></dd>
-    <dt><%=f.label :location_address -%></dt><dd><%=f.text_area :location_address -%></dd>
-    <dt><%=f.label :date_and_time -%></dt><dd><%=f.datetime_select :date_and_time, :prompt => true -%></dd>
-    <dt><%=f.label :coordinator -%></dt><dd><%=f.collection_select :coordinator_id, Person.all, :id, :name, {:prompt=>true} -%></dd>
-    <dt><%=f.label :links -%></dt><dd><%=f.text_area :links -%></dd>
-    <dt>&nbsp;</dt><dd><%=f.submit submit -%></dd>
-  </dt>
+<% semantic_form_for(@event) do |f| %>
+  <%= f.inputs :name, :description, :location_title, :location_address, :date_and_time, :coordinator, :links, :byob %>
+  <%= f.buttons %>
 <% end %>

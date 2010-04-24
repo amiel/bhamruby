@@ -7,6 +7,6 @@
     The next event will be
     <%=l @next_event.date_and_time, :format => :long_highlighted %>
     at <%= link_to_map @next_event.location_title, @next_event.location_address %>.
-    <!-- Bring beer, snacks, or code to share. -->
+    <%= t(:'events.byob') if @next_event.byob? %>
   </div>
 <% end %>
