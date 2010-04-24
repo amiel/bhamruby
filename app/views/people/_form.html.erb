@@ -1,15 +1,4 @@
-<% submit ||= 'Save' -%>
-<% form_for(@person) do |f| %>
-  <%= f.error_messages %>
-  <dl id="person_<%=@person.id -%>" class="edit person">
-    <dt><%=f.label :name -%></dt><dd><%=f.text_field :name -%></dd>
-    <dt><%=f.label :email -%></dt><dd><%=f.text_field :email -%></dd>
-    <dt><%=f.label :password -%></dt><dd><%=f.password_field :password -%></dd>
-    <dt><%=f.label :password_confirmation -%></dt><dd><%=f.password_field :password_confirmation -%></dd>
-    <dt><%=f.label :phone -%></dt><dd><%=f.text_field :phone -%></dd>
-    <dt><%=f.label :company -%></dt><dd><%=f.collection_select :company_id, Company.all, :id, :name, {:prompt=>true} -%></dd>
-    <dt><%=f.label :description -%></dt><dd><%=f.text_area :description -%></dd>
-    <dt><%=f.label :links -%></dt><dd><%=f.text_area :links -%></dd>
-    <dt>&nbsp;</dt><dd><%=f.submit submit -%></dd>
-  </dt>
+<% semantic_form_for(@person) do |f| %>
+  <%= f.inputs :name, :email, :password, :password_confirmation, :phone, :company, :description, :links %>
+  <%= f.buttons %>
 <% end %>
