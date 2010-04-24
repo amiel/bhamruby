@@ -11,5 +11,4 @@ sqldump
 db/*.sqlite3
 capybara-*.html
 coverage
-public/stylesheets/*.css
 app/stylesheets/*.css
