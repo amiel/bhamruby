@@ -8,4 +8,6 @@ class Event < ActiveRecord::Base
   named_scope :uncommitted, :conditions => 'attending NOT IN (\'yes\',\'no\')'
   
   named_scope :future, lambda { { :conditions => ['date_and_time > ?', Time.current] } }
+  
+  include SerializedAttributes.new(:links, *configatron.link_types)
 end

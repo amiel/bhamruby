@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem 'paperclip'
   config.gem 'formtastic'
   config.gem 'gravtastic', :version => '>= 2.1.0'
+  config.gem 'configatron'
   
   
   # Only load the plugins named here, in the order given (default is alphabetical).

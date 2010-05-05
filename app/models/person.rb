@@ -4,6 +4,8 @@ class Person < ActiveRecord::Base
   has_many :attendances
   has_many :events, :through => :attendances
   acts_as_authentic
-  serialize :links
   is_gravtastic!
+  
+  
+  include SerializedAttributes.new(:links, *configatron.link_types)
 end

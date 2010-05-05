@@ -1,0 +1,19 @@
+# production config below
+development: &local
+  host: localhost:3000
+  link_types:
+    - facebook
+    - linkedin
+    - twitter
+    
+
+
+test:
+  <<: *local
+
+cucumber:
+  <<: *local
+  
+production:
+  <<: *local
+  host: bhamruby.org
