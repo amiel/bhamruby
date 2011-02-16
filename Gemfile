@@ -8,3 +8,7 @@ gem 'formtastic'
 gem 'sprockets'
 gem 'gravtastic'
 gem 'configatron'
+
+
+
+gem "sqlite3-ruby", :group => :development

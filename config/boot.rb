@@ -3,6 +3,7 @@
 
 RAILS_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(RAILS_ROOT)
 
+
 module Rails
   class << self
     def boot!
@@ -106,9 +107,7 @@ module Rails
   end
 end
 
-# add this to the bottom of config/boot.rb, before the line `Rails.boot!`
 
-require 'bundler'
 class Rails::Boot
   def run
     load_initializer
