@@ -8,7 +8,7 @@ gem 'formtastic'
 gem 'sprockets'
 gem 'gravtastic'
 gem 'configatron'
-
+gem 'aws-s3'
 
 
 gem "sqlite3-ruby", :group => :development
