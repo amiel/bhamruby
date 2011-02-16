@@ -5,3 +5,4 @@ authlogic
 formtastic
 sprockets
 gravtastic --version='>= 2.1.0'
+configatron
