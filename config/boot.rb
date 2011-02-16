@@ -108,6 +108,7 @@ end
 
 # add this to the bottom of config/boot.rb, before the line `Rails.boot!`
 
+require 'bundler'
 class Rails::Boot
   def run
     load_initializer
