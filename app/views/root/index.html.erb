@@ -1,5 +1,7 @@
 <h1>Bellingham Rubyists <em>(aka #bhamruby)</em></h1> 
 
+<p>We are a collection of talented Rubyists living in and around Bellingham, Washington. We generally meet on the first Thursday of every month to chat about Ruby, Rails, and what's new in the world of web development. We love seeing new faces, so by all means drop in at our next event!</p>
+
 <div id="irc">You can find us at #bhamruby on irc.oftc.net.</div>
 
 <% if @next_event then %>
@@ -10,3 +12,6 @@
     <%= t(:'events.byob') if @next_event.byob? %>
   </div>
 <% end %>
+
+<h3>Some random faces you might spy at an event:</h3>
+<%= render :partial => '/people/avatar', :collection => @random_people %>

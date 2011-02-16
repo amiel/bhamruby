@@ -89,7 +89,7 @@ class PeopleController < ApplicationController
   
   def am_i_current_person
     @person = Person.find(params[:id])
-    unless current_person == @person
+    unless current_person == @person || current_person.admin?
       flash[:error] = "You can only do that to your own data."
       redirect_to :back 
     end

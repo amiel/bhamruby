@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_filter :require_session
-  before_filter :am_i_maintainer, :only => [:edit, :update, :destroy]
+  before_filter :require_session, :only => [:edit, :update, :destroy]
+  before_filter :check_permissions, :only => [:edit, :update, :destroy]
 
   # GET /projects
   def index
@@ -86,12 +86,12 @@ class ProjectsController < ApplicationController
 
   protected
   
-  def am_i_maintainer
+  def check_permissions
     @project = Project.find(params[:id])
-    unless !@project.maintainer || current_person == @project.maintainer
+    unless current_person and current_person.can_edit?(@project)
       flash[:error] = "You can only do that to your own data."
       redirect_to :back 
     end
   end
-
+  
 end

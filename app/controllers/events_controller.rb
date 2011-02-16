@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  before_filter :require_session
-  before_filter :am_i_coordinator, :only => [:edit, :update, :destroy]
+  before_filter :require_session, :only => [:edit, :update, :destroy]
+  before_filter :check_permissions, :only => [:edit, :update, :destroy]
 
   # GET /events
   def index
@@ -86,9 +86,9 @@ class EventsController < ApplicationController
 
   protected
   
-  def am_i_coordinator
+  def check_permissions
     @event = Event.find(params[:id])
-    unless !@event.coordinator || current_person == @event.coordinator
+    unless current_person and current_person.can_edit?(@event)
       flash[:error] = "You can only do that to your own data."
       redirect_to :back 
     end

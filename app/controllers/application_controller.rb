@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   filter_parameter_logging :password, :password_confirmation
-  helper_method :current_session, :current_person
+  helper_method :current_session, :current_person, :can_i_edit
+  
+    def can_i_edit(object)
+      current_person and current_person.can_edit?(object)
+    end
 
     def current_session
       return @current_session if defined?(@current_session)

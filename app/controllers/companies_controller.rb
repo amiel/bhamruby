@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
-  before_filter :require_session
-  before_filter :am_i_owner, :only => [:edit, :update, :destroy]
+  before_filter :require_session, :only => [:edit, :update, :destroy]
+  before_filter :check_permissions, :only => [:edit, :update, :destroy]
 
   # GET /companies
   def index
@@ -86,9 +86,9 @@ class CompaniesController < ApplicationController
   
   protected
   
-  def am_i_owner
+  def check_permissions
     @company = Company.find(params[:id])
-    unless !@company.owner || current_person == @company.owner
+    unless current_person and current_person.can_edit?(@company)
       flash[:error] = "You can only do that to your own data."
       redirect_to :back 
     end

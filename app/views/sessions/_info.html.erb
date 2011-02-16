@@ -1,10 +1,10 @@
 <div id="user-info">
 	<% if current_person then %>
-		Welcome back, <%=h current_person.name -%>!
+		Welcome back, <%=link_to h(current_person.name), current_person -%>!
 		<%= link_to 'Logout', close_session_path %>
 	<% else %>
     <!-- You are not currently logged in. -->
-		<%= link_to 'Login', new_session_path %>
-		<%#= link_to 'Register', new_person_path %>
+		<%= link_to 'Login', new_session_path %> | 
+		<%= link_to 'Register', new_person_path %>
 	<% end %>
 </div>
